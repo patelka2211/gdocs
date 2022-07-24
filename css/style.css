@@ -305,14 +305,14 @@ body.stop-scrolling {
 
 @media (max-width: 850px) {
   #modals {
-    justify-content: end;
+    justify-content: start;
   }
   #modals #sharer-modal {
     border: none;
     border-top: 2px solid var(--close-btn-color);
     border-radius: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     transition: height 0.4s ease, width 0.4s ease, border 0.4s ease;
   }
   #container .main-container .main .logo-title .logo {
