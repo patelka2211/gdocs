@@ -94,7 +94,7 @@ class share_api {
                 title
             )}&url=${encodeURIComponent(
                 url
-            )}&media=${"https://raw.githubusercontent.com/patelka2211/gdocs/main/assets/opengraph.png"}&method=button`;
+            )}&media=${"https://raw.githubusercontent.com/patelka2211/gdocs/main/assets/opengraph.jpg"}&method=button`;
         } else if (platform == "mail") {
             url = `mailto:?subject=${encodeURIComponent(
                 title
