@@ -1,12 +1,10 @@
-setTimeout(() => {
-    if (
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-        document.body.classList.add("dark");
-        document.getElementById("logo").href = "./assets/logo-dark.png";
-    }
-}, 400);
+if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+    document.body.classList.add("dark");
+    document.getElementById("logo").href = "./assets/logo-dark.png";
+}
 
 class window_opener {
     open_window(url, width_percent = 0.84, height_percent = 0.84) {
@@ -95,7 +93,7 @@ class share_api {
                 title
             )}&u=${encodeURIComponent(url)}`;
         } else if (platform == "wa") {
-            url = `http://api.whatsapp.com/send?text=${encodeURIComponent(
+            url = `whatsapp://send?text=${encodeURIComponent(
                 `${title}\n${url}`
             )}`;
         } else if (platform == "lnkdn") {
