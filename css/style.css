@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-* {
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-}
-
 :root {
   --primary: rgb(255, 255, 255);
   --highlight: rgba(47, 103, 211);
@@ -26,118 +20,12 @@
 body {
   background-color: var(--primary);
   transition: background-color 0.4s ease;
+  margin: 0;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 body.stop-scrolling {
   height: 100%;
   overflow: hidden;
-}
-
-#modals {
-  opacity: 0;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  min-width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.5019607843);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-  position: fixed;
-  transition: opacity 0.4s ease, background-color 0.4s ease, -webkit-backdrop-filter 0.4s ease;
-  transition: opacity 0.4s ease, background-color 0.4s ease, backdrop-filter 0.4s ease;
-  transition: opacity 0.4s ease, background-color 0.4s ease, backdrop-filter 0.4s ease, -webkit-backdrop-filter 0.4s ease;
-}
-#modals.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-#modals #sharer-modal {
-  border: 1px solid var(--close-btn-color);
-  width: 100%;
-  max-width: 850px;
-  height: 164px;
-  background-color: var(--primary);
-  border-radius: 16px;
-  transition: height 0.4s ease, width 0.4s ease, border 0.4s ease, background-color 0.4s ease;
-}
-#modals #sharer-modal .heading {
-  display: flex;
-  width: 100%;
-  margin: 16px 0;
-}
-#modals #sharer-modal .heading .close-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 16%;
-  border: none;
-}
-#modals #sharer-modal .heading .close-btn #close-btn-svg-bg {
-  width: 28px;
-  height: 28px;
-  background-color: var(--close-btn-color);
-  border-radius: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  transition: background-color 0.4s ease;
-}
-#modals #sharer-modal .heading .close-btn #close-btn-svg-bg:hover {
-  cursor: pointer;
-}
-#modals #sharer-modal .heading .close-btn #close-btn-svg-bg .close-svg {
-  width: 14px;
-  height: 14px;
-  fill: var(--color-dim);
-  transition: fill 0.4s ease;
-}
-#modals #sharer-modal .heading .title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 68%;
-}
-#modals #sharer-modal .heading .title .text {
-  font-size: 1.2rem;
-  text-align: center;
-  color: var(--color-attract);
-  transition: color 0.4s ease;
-}
-#modals #sharer-modal .heading .space {
-  width: 16%;
-}
-#modals #sharer-modal .options {
-  width: 100%;
-  height: 10vh;
-  margin-top: 26px;
-}
-#modals #sharer-modal .options ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}
-#modals #sharer-modal .options ul li {
-  width: 10%;
-  height: 10%;
-  max-width: 88px;
-  max-height: 88px;
-  transition: width 0.4s ease, height 0.4s ease;
-}
-#modals #sharer-modal .options ul li:hover {
-  cursor: pointer;
-}
-#modals #sharer-modal .options ul li svg {
-  width: 100%;
-  height: 100%;
-  transition: width 0.4s ease, height 0.4s ease;
 }
 
 #container {
@@ -304,17 +192,6 @@ body.stop-scrolling {
 }
 
 @media (max-width: 850px) {
-  #modals {
-    justify-content: start;
-  }
-  #modals #sharer-modal {
-    border: none;
-    border-top: 2px solid var(--close-btn-color);
-    border-radius: 0;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    transition: height 0.4s ease, width 0.4s ease, border 0.4s ease;
-  }
   #container .main-container .main .logo-title .logo {
     margin-top: 40px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease;

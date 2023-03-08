@@ -1,10 +1,18 @@
-if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-) {
-    document.body.classList.add("dark");
-    document.getElementById("logo").href = "./assets/logo-dark.png";
-}
+((media) => {
+    if (window.matchMedia && media.matches) {
+        document.body.classList.add("dark");
+        document.getElementById("logo").href = "./assets/logo-dark.png";
+    }
+    media.addEventListener("change", ({ matches }) => {
+        if (matches) {
+            document.body.classList.add("dark");
+            document.getElementById("logo").href = "./assets/logo-dark.png";
+        } else {
+            document.body.classList.remove("dark");
+            document.getElementById("logo").href = "./assets/logo-light.png";
+        }
+    });
+})(window.matchMedia("(prefers-color-scheme: dark)"));
 
 class window_opener {
     open_window(url, width_percent = 0.84, height_percent = 0.84) {
@@ -23,110 +31,6 @@ class window_opener {
         sessionStorage.window_features = window_features;
     }
 }
-
-class modal_operator {
-    constructor() {
-        this.modals = document.getElementById("modals");
-        this.body = document.body;
-        this.share_btn = document.getElementById("sharer-btn");
-        this.close_btn = document.getElementById("close-btn-svg-bg");
-
-        this.share_btn.onclick = () => {
-            this.show_share_options();
-        };
-
-        this.close_btn.onclick = () => {
-            this.hide_share_options();
-        };
-    }
-
-    show_share_options() {
-        this.modals.classList.add("show");
-        this.body.classList.add("stop-scrolling");
-        this.modal_shown = true;
-    }
-
-    hide_share_options() {
-        this.modals.classList.remove("show");
-        this.body.classList.remove("stop-scrolling");
-        this.modal_shown = false;
-    }
-}
-
-let modal_operator_obj = new modal_operator();
-
-class share_api {
-    constructor() {
-        this.window_opener_obj = new window_opener();
-    }
-    assign_tasks() {
-        const btn_list = [
-            "twtr",
-            "fb",
-            "wa",
-            "lnkdn",
-            "snpcht",
-            "rdt",
-            "pntrst",
-            "mail",
-        ];
-
-        for (let index = 0; index < btn_list.length; index++) {
-            document
-                .getElementById(`${btn_list[index]}`)
-                .addEventListener("click", () => {
-                    this.open_window(btn_list[index]);
-                });
-        }
-    }
-
-    open_window(platform) {
-        let title = `Create Google Workspace file easily using patelka2211/gdocs.`;
-        let url = window.location.href;
-
-        if (platform == "twtr") {
-            url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                title
-            )}&url=${encodeURIComponent(url)}`;
-        } else if (platform == "fb") {
-            url = `https://www.facebook.com/sharer/sharer.php?t=${encodeURIComponent(
-                title
-            )}&u=${encodeURIComponent(url)}`;
-        } else if (platform == "wa") {
-            url = `whatsapp://send?text=${encodeURIComponent(
-                `${title}\n${url}`
-            )}`;
-        } else if (platform == "lnkdn") {
-            url = `https://www.linkedin.com/cws/share?url=${encodeURIComponent(
-                `${title}\n${url}`
-            )}`;
-        } else if (platform == "snpcht") {
-            url = `https://snapchat.com/scan?attachmentUrl=${encodeURIComponent(
-                url
-            )}`;
-        } else if (platform == "rdt") {
-            url = `https://reddit.com/submit?title=${encodeURIComponent(
-                title
-            )}&url=${encodeURIComponent(url)}`;
-        } else if (platform == "pntrst") {
-            url = `https://www.pinterest.com/pin/create/button/?description=${encodeURIComponent(
-                title
-            )}&url=${encodeURIComponent(
-                url
-            )}&media=${"https://raw.githubusercontent.com/patelka2211/gdocs/main/assets/opengraph.jpg"}&method=button`;
-        } else if (platform == "mail") {
-            url = `mailto:?subject=${encodeURIComponent(
-                title
-            )}&body=${encodeURIComponent(url)}`;
-        }
-
-        this.window_opener_obj.open_window(url);
-    }
-}
-
-let share_api_obj = new share_api();
-
-share_api_obj.assign_tasks();
 
 class open_apps_api {
     constructor() {

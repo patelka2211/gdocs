@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+    --primary: rgb(255, 255, 255);
+    --highlight: rgba(47, 103, 211);
+    --color-attract: #14171a;
+    --color-dim: #657786;
+    --close-btn-color: #8c909433;
+    --logo-bg: white;
+}
+.dark {
+    --primary: rgb(14, 17, 22);
+    --highlight: rgba(107, 164, 248);
+    --color-attract: #f5f8fa;
+    --color-dim: #657786;
+    --close-btn-color: #22282d;
+    --logo-bg: #2e3037;
+}
+body {
+    background-color: var(--primary);
+    transition: background-color 0.4s ease;
+    margin: 0;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+
+    &.stop-scrolling {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+#container {
+    width: 100%;
+    height: 100vh;
+    .main-container {
+        width: 100%;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .main {
+            .logo-title {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .logo {
+                    width: 20vw;
+                    height: 20vw;
+                    max-width: 160px;
+                    max-height: 160px;
+                    margin-top: 0px;
+                    transition: margin 0.4s ease, width 0.4s ease,
+                        height 0.4s ease;
+                    // margin-top: 40px;
+                    // transition: margin 0.4s ease, width 0.4s ease,
+                    //     height 0.4s ease;
+                    .logo-bg {
+                        fill: var(--logo-bg);
+                        transition: fill 0.4s ease;
+                    }
+                }
+                .title {
+                    text-align: center;
+                    margin-top: 10px;
+                    margin-bottom: 40px;
+                    transition: margin 0.4s ease, padding 0.4s ease,
+                        color 0.4s ease;
+                    font-size: 1.4rem;
+                    padding: 0;
+                    color: var(--color-attract);
+                    // padding: 0 10px;
+                    // transition: margin 0.4s ease, padding 0.4s ease;
+                    &:hover {
+                        cursor: default;
+                    }
+                    .gdocs-span {
+                        .gdocs {
+                            text-decoration: none;
+                            background: linear-gradient(
+                                45deg,
+                                #0088ff -28.62%,
+                                #a033ff 36.39%,
+                                #ff5c87 98.74%
+                            );
+                            -webkit-background-clip: text;
+                            color: transparent;
+                        }
+                    }
+                }
+            }
+            .options {
+                ul {
+                    list-style: none;
+                    display: flex;
+                    // display: flex;
+                    // flex-direction: column;
+                    // align-items: center;
+                    li {
+                        button {
+                            margin: 0 20px;
+                            width: 60vw;
+                            max-width: 160px;
+                            height: 82.1390374332vw;
+                            max-height: 219.0374331551px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-evenly;
+                            border-radius: 10px;
+                            border: none;
+                            background-color: transparent;
+                            box-shadow: 0 8px 16px 0 transparent;
+                            transition: background-color 0.4s ease,
+                                margin 0.4s ease;
+                            // margin: 20px 0;
+                            // transition: margin 0.4s ease;
+                            svg {
+                                width: 75%;
+                                height: 75%;
+                            }
+                            .text {
+                                font-size: 1.2rem;
+                                color: var(--color-attract);
+                                transition: color 0.4s ease;
+                            }
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                        #docs {
+                            &:hover {
+                                background-color: rgba(0, 134, 249, 0.2);
+                                .text {
+                                    color: #0067d9;
+                                }
+                            }
+                        }
+                        #sheets {
+                            &:hover {
+                                background-color: rgba(0, 173, 60, 0.2);
+                                .text {
+                                    color: #00831e;
+                                }
+                            }
+                        }
+                        #slides {
+                            &:hover {
+                                background-color: rgba(255, 191, 0, 0.2);
+                                .text {
+                                    color: #ff9300;
+                                }
+                            }
+                        }
+                        #forms {
+                            &:hover {
+                                background-color: rgba(127, 59, 184, 0.2);
+                                .text {
+                                    color: #8750b4;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .creds {
+        width: 100%;
+        height: 10vh;
+        min-height: 88px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--color-dim);
+            .externals {
+                margin-bottom: 8px;
+                a {
+                    text-decoration: none;
+                    color: var(--highlight);
+                    padding: 1px 4px;
+                    border-radius: 6px;
+                    background-color: transparent;
+                    transition: background-color 0.4s ease;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgba(0, 134, 249, 0.2);
+                    }
+                }
+            }
+            .author-creds {
+                text-decoration: none;
+                transition: color 0.4s ease;
+                color: var(--color-attract);
+                display: flex;
+                align-items: center;
+                svg {
+                    margin: 0 4px;
+                    width: 30px;
+                    height: 20px;
+                    .tricolor-orange {
+                        fill: #ff9933;
+                    }
+                    .tricolor-white {
+                        fill: #fff;
+                    }
+                    .tricolor-green {
+                        fill: #128807;
+                    }
+                    .tricolor-chakra-blue {
+                        fill: #000088;
+                    }
+                }
+                .text {
+                    .author {
+                        background: linear-gradient(
+                            45deg,
+                            #0088ff -28.62%,
+                            #a033ff 36.39%,
+                            #ff5c87 98.74%
+                        );
+                        -webkit-background-clip: text;
+                        color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 850px) {
+    #container .main-container .main {
+        .logo-title {
+            .logo {
+                margin-top: 40px;
+                transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease;
+            }
+            .title {
+                padding: 0 10px;
+                transition: margin 0.4s ease, padding 0.4s ease;
+            }
+        }
+        .options ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            li button {
+                margin: 20px 0;
+                transition: margin 0.4s ease;
+            }
+        }
+    }
+}
